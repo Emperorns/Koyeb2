@@ -1,8 +1,9 @@
 FROM python:3.9-slim
 
-# Install Koyeb CLI
+# Install dependencies for Koyeb CLI
 RUN apt-get update && apt-get install -y curl && \
-    curl -s https://cli.koyeb.com/install.sh | bash
+    curl -s https://cli.koyeb.com/install.sh | bash && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
