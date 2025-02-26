@@ -1,6 +1,6 @@
-# app/main.py
 import os
 import logging
+import requests  # Add this import
 from flask import Flask, request, jsonify
 from telegram import Update
 from app.auth import authenticate_request
